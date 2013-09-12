@@ -10,6 +10,7 @@ Particle::Particle(sf::Vector2f pPosition, sf::Vector2f pVelocity, float pAngle,
 	mAngle(pAngle),
 	mAngularVelocity(pAngularVelocity),
 	mTTL(pTTL),
+	maxTTL(pTTL),
 	mSize(pSize),
 	mColor(pColor),
 	mDrawType(pDrawType)
@@ -22,6 +23,7 @@ Particle::~Particle(void)
 
 void Particle::Update()
 {
+	mColor.a = (255/maxTTL) * mTTL;
 	mTTL--;
 	mPosition += mVelocity;
 	mAngle += mAngularVelocity;

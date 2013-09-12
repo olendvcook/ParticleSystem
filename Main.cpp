@@ -7,7 +7,7 @@
 //USING: http://www.koonsolo.com/news/dewitters-gameloop/
 
 //TICKS_PER_SECOND = Update Speed
-const int TICKS_PER_SECOND = 30;
+const int TICKS_PER_SECOND = 60;
 const int SKIP_TICKS = 1000 / TICKS_PER_SECOND;
 const int MAX_FRAMESKIP = 5;
 
@@ -23,7 +23,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	sf::RenderWindow window(sf::VideoMode(640, 480), "Particle Engine Test!");
 
-	ParticleEngine particleEngine(sf::Vector2f(-300,300),1000, sf::Color::Black);
+	ParticleEngine particleEngine(sf::Vector2f(-300,300),500, sf::Color::Black);
 	particleEngine.setSize(10);
 
 	while (window.isOpen())
@@ -46,7 +46,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 		{
 
 			//updates here
-			particleEngine.Update(0.7f);
+			particleEngine.Update(0.15f);
 
 
 			nextGameTick += SKIP_TICKS;

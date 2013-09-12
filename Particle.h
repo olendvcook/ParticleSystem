@@ -23,6 +23,7 @@ private:
 	float mSize;
 	//Time to Live
 	int mTTL;
+	int maxTTL;
 	DrawType mDrawType;
 
 	void DrawRectangles(sf::RenderWindow* pWindow,  float pInterpolation = 1.0);
